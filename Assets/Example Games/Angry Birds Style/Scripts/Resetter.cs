@@ -9,7 +9,11 @@ public class Resetter : MonoBehaviour {
 	private float resetSpeedSqr;			//	The square value of Reset Speed, for efficient calculation
 	private SpringJoint2D spring;			//	The SpringJoint2D component which is destroyed when the projectile is launched
 
-	public GameObject prefabNewProjectile;
+	public GameObject projectileGameObject;
+
+	public int lifes = 3;
+
+	public GameObject lifesPanel;
 	
 	void Start ()
 	{
@@ -39,15 +43,35 @@ public class Resetter : MonoBehaviour {
 		if (other.GetComponent<Rigidbody2D>() == projectile) {
 			//	... call the Reset() function
 			//Reset ();
-			ResetNewProjectile();
+			lifes--;
+			if (lifes > 0) {
+				LogicLifes();
+				ResetNewProjectile();
+			}
+			else
+			{
+				Debug.Log ("Game over");
+			}
+		}
+	}
+
+	void LogicLifes()
+	{
+		Debug.Log(lifesPanel.transform.childCount);
+		switch (lifes)
+		{
+		case 1:
+
+			break;
+		case 2:
+
+			break;
 		}
 	}
 
 	void ResetNewProjectile()
 	{
-		//Instantiate(brick, new Vector3(x, y, 0), Quaternion.identity);
-		//Instantiate (prefabNewProjectile, new Vector3(-12.72f,-5.57f,0.0f), Quaternion.identity);
-		prefabNewProjectile.transform.position = new Vector3 (-12.72f, -5.57f, 0.0f);
+		projectileGameObject.transform.position = new Vector3 (-12.72f, -5.57f, 0.0f);
 		projectile.isKinematic = true;
 	}
 	
