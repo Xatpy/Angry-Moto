@@ -116,12 +116,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 157392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30f3f02380094fddaab32af5388f331, type: 3}
+  m_Script: {fileID: 11500000, guid: d67e6e47118dd2040a849df0590af500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damagedSprite: {fileID: 21300000, guid: d99b98754bcaa49ffaa1db1c74723068, type: 3}
-  damageImpactSpeed: .5
-  catapultPosition: {x: 0, y: 0, z: 0}
+  damageImpactSpeed: 0
+  catapultPosition: {x: -12.7200003, y: -5.57000017, z: 0}
 --- !u!198 &19879814
 ParticleSystem:
   m_ObjectHideFlags: 1

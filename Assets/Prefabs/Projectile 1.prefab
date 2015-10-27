@@ -34,6 +34,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5047242
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -42,11 +43,11 @@ Rigidbody2D:
   m_LinearDrag: .100000001
   m_AngularDrag: 1
   m_GravityScale: 1
-  m_FixedAngle: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &5811072
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -68,12 +69,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 117772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849df97d6dcfe4b8da517c1fd0dca053, type: 3}
+  m_Script: {fileID: 11500000, guid: d67e6e47118dd2040a849df0590af500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStretch: 3
-  catapultLineFront: {fileID: 0}
-  catapultLineBack: {fileID: 0}
+  damagedSprite: {fileID: 0}
+  damageImpactSpeed: 0
+  catapultPosition: {x: -12.7200003, y: -5.57000017, z: 0}
 --- !u!212 &21241214
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -107,7 +108,8 @@ SpringJoint2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117772}
   m_Enabled: 1
-  m_CollideConnected: 1
+  serializedVersion: 3
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}

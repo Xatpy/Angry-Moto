@@ -30,7 +30,7 @@ GameObject:
   - 50: {fileID: 5034988}
   - 58: {fileID: 5800064}
   - 231: {fileID: 23186904}
-  - 114: {fileID: 11479822}
+  - 114: {fileID: 11482620}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Damager
@@ -166,7 +166,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &11479822
+--- !u!114 &11482620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

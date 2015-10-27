@@ -16,7 +16,6 @@ public class Resetter : MonoBehaviour {
 	
 	public List<GameObject> lifesArrayGO;
 
-	public Rigidbody2D rigidCatapult;
 
 	void Start ()
 	{
