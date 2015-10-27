@@ -46,9 +46,15 @@ public class Resetter : MonoBehaviour {
 	
 	void OnTriggerExit2D (Collider2D other) {
 		//	If the projectile leaves the Collider2D boundary...
-		if (other.GetComponent<Rigidbody2D> () == projectile) {
+		//if (other.GetComponent<Rigidbody2D> () == projectile) {
+		if (other.tag == "Damager")
+		{
 			//	... call the Reset() function
 			//Reset ();
+			Debug.Log("entró");
+			Debug.Log (other.tag);
+			Debug.Log (other.GetComponent<Rigidbody2D>());
+			
 			lifes--;
 			LogicLifes ();
 			if (lifes > 0) {
@@ -58,6 +64,8 @@ public class Resetter : MonoBehaviour {
 			}
 		} else {
 			Debug.Log ("algo entro");
+			Debug.Log (other.tag);
+			Debug.Log (other.GetComponent<Rigidbody2D>());
 		}
 	}
 
