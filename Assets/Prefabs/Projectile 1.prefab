@@ -107,7 +107,7 @@ SpringJoint2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117772}
   m_Enabled: 1
-  m_CollideConnected: 0
+  m_CollideConnected: 1
   m_ConnectedRigidBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}

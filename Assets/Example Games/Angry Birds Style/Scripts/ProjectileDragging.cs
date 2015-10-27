@@ -21,6 +21,7 @@ public class ProjectileDragging : MonoBehaviour {
 	}
 	
 	void Start () {
+		Awake ();
 		LineRendererSetup ();
 		rayToMouse = new Ray(catapult.position, Vector3.zero);
 		leftCatapultToProjectile = new Ray(catapultLineFront.transform.position, Vector3.zero);
