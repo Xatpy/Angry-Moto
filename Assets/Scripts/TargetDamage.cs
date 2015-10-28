@@ -12,6 +12,11 @@ public class TargetDamage : MonoBehaviour {
 	private float damageImpactSpeedSqr;			//	The square value of Damage Impact Speed, for efficient calculation
 	private SpriteRenderer spriteRenderer;		//	The reference to this GameObject's sprite renderer
 
+    public AudioClip itemSoundClip;
+    public float itemSoundVolume = 1f;
+
+    public int points = 0;
+
 	void Start () {
 		//	Get the SpriteRenderer component for the GameObject's Rigidbody
 		spriteRenderer = GetComponent <SpriteRenderer> ();
@@ -40,7 +45,9 @@ public class TargetDamage : MonoBehaviour {
 
     void Catched(Collision2D collision)
     {
-        int points = GetPuntuation(collision.transform.position);
+        AudioSource.PlayClipAtPoint(itemSoundClip, Camera.main.transform.position, itemSoundVolume);
+
+        points += GetPuntuation(collision.transform.position);
 
         NotificationCenter.DefaultCenter().PostNotification(this, "MarquezCatch", points);
         NotificationCenter.DefaultCenter().PostNotification(this, "NewRoundBeforeSuccess");        
@@ -74,7 +81,7 @@ public class TargetDamage : MonoBehaviour {
     IEnumerator WaitAndDie()
     {
         yield return new WaitForSeconds(3.0f);
-        Debug.Log("muero");
+        //Debug.Log("muero");
         Destroy(this.gameObject.transform.parent.gameObject);
     }
 }

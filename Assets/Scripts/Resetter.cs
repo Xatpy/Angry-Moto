@@ -25,7 +25,7 @@ public class Resetter : MonoBehaviour {
 		//	Get the SpringJoint2D component through our reference to the GameObject's Rigidbody
 		spring = projectile.GetComponent <SpringJoint2D>();
 
-		Debug.Log ("start");
+		//Debug.Log ("start");
 	}
 	
 	void Update () {
@@ -44,19 +44,8 @@ public class Resetter : MonoBehaviour {
 	}
 	
 	void OnTriggerExit2D (Collider2D other) {
-		//	If the projectile leaves the Collider2D boundary...
-		//if (other.GetComponent<Rigidbody2D> () == projectile) {
 		if (other.tag == "Damager")
 		{
-			//Reset ();		                          
-			/*lifes--;
-			LogicLifes ();
-			if (lifes > 0) {
-				ResetNewProjectile ();
-			} else {
-				Debug.Log ("Game over");
-                NotificationCenter.DefaultCenter().PostNotification(this, "GameOver");                
-			}*/
             Debug.Log("posteando");
             NotificationCenter.DefaultCenter().PostNotification(this, "NewRoundBeforeFail");
             Destroy(other.gameObject.transform.parent.gameObject);
@@ -65,7 +54,7 @@ public class Resetter : MonoBehaviour {
 
 	void LogicLifes()
 	{
-		Debug.Log ("LOGIc LIFES: " + lifes);
+		//Debug.Log ("LOGIc LIFES: " + lifes);
 		switch (lifes)
 		{
 			case 0:
@@ -97,8 +86,6 @@ public class Resetter : MonoBehaviour {
 	}
 	
 	void Reset () {
-		//	The reset function will Reset the game by reloading the same level
-		Debug.Log ("empezamos");
 		Application.LoadLevel (Application.loadedLevel);
 	}
 }

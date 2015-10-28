@@ -20,14 +20,14 @@ public class GameFlow : MonoBehaviour {
 
     void NewRoundBeforeSuccess()
     {
-        Debug.Log("NewRoundBeforeSuccess");
+        //Debug.Log("NewRoundBeforeSuccess");
         ResetNewTarget();
         ResetNewCatapult();
     }
 
     void NewRoundBeforeFail()
     {
-        Debug.Log("NewRoundBeforeFail");
+        //Debug.Log("NewRoundBeforeFail");
         lifes--;
         LogicLifes();
         if (lifes > 0)
@@ -36,14 +36,13 @@ public class GameFlow : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Game over");
+            //Debug.Log("Game over");
             NotificationCenter.DefaultCenter().PostNotification(this, "GameOver");
         }    
     }
 
     void LogicLifes()
-    {
-        Debug.Log("LOGIc LIFES: " + lifes);
+    {       
         switch (lifes)
         {
             case 0:
@@ -80,7 +79,7 @@ public class GameFlow : MonoBehaviour {
     {
         int level = int.Parse(levelText.text);
         float speed = go.GetComponent<Animator>().speed;
-        speed += (0.8f * level);
+        speed += (1.5f * level);
         go.GetComponent<Animator>().speed = speed;
     }
 
