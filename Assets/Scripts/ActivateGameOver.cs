@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
+using System;
+using UnityEngine.Analytics;
 
 public class ActivateGameOver : MonoBehaviour {
 
@@ -41,8 +45,9 @@ public class ActivateGameOver : MonoBehaviour {
     void ManageRecords()
     {
         int currentRecord = int.Parse(highscoreGameScreen.text);
-
         int savedRecord = GetScore();
+
+        ManageAnalytics(currentRecord);
 
         if (currentRecord > savedRecord)
         {
@@ -52,6 +57,17 @@ public class ActivateGameOver : MonoBehaviour {
         {
             highscoreGameOverScreen.text = savedRecord.ToString();
         }
+    }
+
+    public void ManageAnalytics(int points)
+    {
+        Debug.Log("mandate: " + points.ToString());
+        string currentDate = DateTime.Now.ToString();
+        Analytics.CustomEvent("gameOverPoints", new Dictionary<string, object>
+        {
+            { "points", points } ,
+            { "date", currentDate }
+        });
     }
 
     public int GetScore()

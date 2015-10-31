@@ -119,11 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30f3f02380094fddaab32af5388f331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedSprite: {fileID: 21300000, guid: d99b98754bcaa49ffaa1db1c74723068, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 07606e6421c8e3a4092c0ea742642c92, type: 3}
   damageImpactSpeed: 0
   catapultPosition: {x: -12.7200003, y: -5.57000017, z: 0}
   itemSoundClip: {fileID: 8300000, guid: 9333d32db9ca18845b1fcd6678e27286, type: 3}
   itemSoundVolume: 2
+  points: 0
 --- !u!198 &19879814
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1237,7 +1238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 404910065
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 7fa6e632b2b074ad0a771b4514cd53b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07606e6421c8e3a4092c0ea742642c92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

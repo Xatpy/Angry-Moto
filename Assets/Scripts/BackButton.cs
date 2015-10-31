@@ -10,11 +10,16 @@ public class BackButton : MonoBehaviour {
         //Camera.main.GetComponent<AudioSource>().Stop();
         //GetComponent<AudioSource>().Play();    void OnMouseDown()
         {
-            //Camera.main.GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().Play();
-            Invoke("CargarNivelJuego", GetComponent<AudioSource>().clip.length);                
-            //Invoke("CargarNivelJuego", GetComponent<AudioSource>().clip.length);
-            //Invoke("LoadMain", 0.5f);
+            Invoke("LoadMain", GetComponent<AudioSource>().clip.length);                
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Invoke("LoadMain", GetComponent<AudioSource>().clip.length);                
         }
     }
 
