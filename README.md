@@ -1,4 +1,4 @@
-# AngryRossi
+# Angry Moto
 
 Media Links:
 - [sportyou](http://www.sportyou.es/blog/motos/2015/10/28/angry-rossi-marquez-google-play-579728.html) 
