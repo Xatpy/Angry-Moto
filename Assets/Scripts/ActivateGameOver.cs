@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using System;
-using UnityEngine.Analytics;
+//using UnityEngine.Analytics;
 
 public class ActivateGameOver : MonoBehaviour {
 
@@ -24,10 +24,6 @@ public class ActivateGameOver : MonoBehaviour {
 
     void GameOver(Notification notificacion)
     {
-        /*GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().clip = gameOverClip;
-        GetComponent<AudioSource>().loop = false;
-        GetComponent<AudioSource>().Play();*/
         cameraGameOver.SetActive(true);
         cameraGame.SetActive(false);
 
@@ -37,8 +33,6 @@ public class ActivateGameOver : MonoBehaviour {
         }
         sceneGameOver.SetActive(true);
 
-        //Debug.Log("metemos game over" );
-        //Debug.Log(highscoreGameScreen.text);
         ManageRecords();
     }
 
@@ -61,13 +55,12 @@ public class ActivateGameOver : MonoBehaviour {
 
     public void ManageAnalytics(int points)
     {
-        Debug.Log("mandate: " + points.ToString());
         string currentDate = DateTime.Now.ToString();
-        Analytics.CustomEvent("gameOverPoints", new Dictionary<string, object>
-        {
-            { "points", points } ,
-            { "date", currentDate }
-        });
+//        Analytics.CustomEvent("gameOverPoints", new Dictionary<string, object>
+//        {
+//            { "points", points } ,
+//            { "date", currentDate }
+//        });
     }
 
     public int GetScore()
@@ -82,10 +75,5 @@ public class ActivateGameOver : MonoBehaviour {
     public void SetScore(int value)
     {
         PlayerPrefs.SetInt("Score", value);
-    }
-
-    void Update()
-    {
-
     }
 }

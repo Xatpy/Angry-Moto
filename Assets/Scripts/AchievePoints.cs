@@ -31,7 +31,6 @@ public class AchievePoints : MonoBehaviour {
         int level = UpdateLevel();
         int pointsReceived = (int)notArgs.data;
         int totalPoints = level * pointsReceived;
-        //Debug.Log("me llego " + points.ToString());
 
         points.text = totalPoints.ToString();        
     }
